@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> FlappyPrint </title>
+  <head>
+      <meta charset="utf-8">
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+      </script>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <script src="/static/phaser.min.js"></script>
+      <script src="/static/main.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="/static/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-container">
+        <div id="game"></div>
+        <p>
+          Your score: <span id="game-score"></span>
+        </p>
+        <input id="name" type="text" placeholder="Your name">
+        <button class="fancy" id="submit-button">Submit</button>
+        <br>
+        <br>
+        <button class="fancy green" id="restart-button">Restart Game</Button>
+      </div>
+      <div class="leaderboard">
+        <h1> Leaderboard </h1>
+          <!--<table class="table">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table> /-->
+        <ol class="scores">
+            {% for score in scores %}
+            <li>
+                <span class="name">
+                    {{ score[0] }}
+                </span>
+                <span class="score">
+                    {{ score[1] }}
+                </span>
+            </li>
+            {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
